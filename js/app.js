@@ -65,32 +65,49 @@ function initMobileMenu() {
   const drawer = document.getElementById('mobileMenuDrawer');
   if (!toggleBtn || !drawer) return;
 
-  // Ensure drawer is hidden on initial desktop load
-  if (window.innerWidth > 768) {
-    drawer.style.display = 'none';
+  const hamburgerSvg = `<svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>`;
+  const closeSvg = `<svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>`;
+
+  function openDrawer() {
+    drawer.classList.add('active');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    toggleBtn.innerHTML = closeSvg;
+    toggleBtn.classList.add('is-active');
   }
 
-  toggleBtn.addEventListener('click', () => {
-    drawer.classList.toggle('active');
-    const isOpen = drawer.classList.contains('active');
-    drawer.style.display = isOpen ? 'flex' : 'none';
-    toggleBtn.setAttribute('aria-expanded', isOpen);
+  function closeDrawer() {
+    drawer.classList.remove('active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.innerHTML = hamburgerSvg;
+    toggleBtn.classList.remove('is-active');
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (drawer.classList.contains('active')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
   });
 
-  // Close when clicking any nav link inside drawer
-  drawer.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      drawer.classList.remove('active');
-      drawer.style.display = 'none';
-      toggleBtn.setAttribute('aria-expanded', 'false');
+  // Close when clicking any nav link or quote button inside drawer
+  drawer.querySelectorAll('.nav-link, .trigger-quote-modal, a, button').forEach(el => {
+    el.addEventListener('click', () => {
+      closeDrawer();
     });
   });
 
+  // Close when clicking outside drawer
+  document.addEventListener('click', (e) => {
+    if (drawer.classList.contains('active') && !drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+      closeDrawer();
+    }
+  });
+
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      drawer.classList.remove('active');
-      drawer.style.display = 'none';
-      toggleBtn.setAttribute('aria-expanded', 'false');
+    if (window.innerWidth > 768 && drawer.classList.contains('active')) {
+      closeDrawer();
     }
   });
 }
@@ -316,8 +333,8 @@ async function saveQuoteToBitacora(payload) {
     console.warn('No se pudo escribir en el almacenamiento local:', e);
   }
 
-  // B. Envío a Supabase si las credenciales están configuradas
   if (typeof SALT_CONFIG !== 'undefined' && SALT_CONFIG.supabaseUrl && SALT_CONFIG.supabaseAnonKey) {
+    try {
       const baseUrl = SALT_CONFIG.supabaseUrl.replace(/\/rest\/v1\/?$/, '').replace(/\/+$/, '');
       const url = `${baseUrl}/rest/v1/cotizaciones`;
       const response = await fetch(url, {
