@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguridad SALT | Empresa de Seguridad Privada en Costa Rica</title>
+  <meta name="description" content="Seguridad SALT es una empresa de seguridad privada en Costa Rica con más de 34 años de experiencia. Ofrecemos portería profesional para condominios, seguridad física, seguridad electrónica, control de accesos y custodia especializada.">
+  <meta name="keywords" content="seguridad privada costa rica, seguridad condominios, porteria profesional, guardas de seguridad, seguridad fisica, seguridad electronica, cctv monitoreo, custodia de transporte">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Seguridad SALT | Empresa de Seguridad Privada en Costa Rica">
+  <meta property="og:description" content="Soluciones de seguridad integral para empresas, condominios y centros comerciales. Más de 34 años de experiencia operativa.">
+  <meta property="og:image" content="assets/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="alternate icon" href="assets/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       HEADER / NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="header">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="logo-brand" aria-label="Seguridad SALT Inicio">
+        <img src="assets/logo-emblem.svg" alt="Seguridad SALT Logo" class="logo-img" width="54" height="54">
+        <div class="logo-text-wrap">
+          <span class="logo-tagline">SEGURIDAD</span>
+          <span class="logo-title">SALT</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Navegación principal">
+        <ul class="nav-menu">
+          <li><a href="#servicios" class="nav-link">SERVICIOS</a></li>
+          <li><a href="#porteria" class="nav-link">PORTERÍA CONDOMINIOS</a></li>
+          <li><a href="#elegirnos" class="nav-link">POR QUÉ ELEGIRNOS</a></li>
+          <li><a href="#galeria" class="nav-link">GALERÍA</a></li>
+          <li><a href="#clientes" class="nav-link">TESTIMONIOS</a></li>
+          <li><a href="#contacto" class="nav-link">CONTACTO</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm trigger-quote-modal" data-service="General" id="btnNavCotizar">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          SOLICITAR ASESORÍA
+        </button>
+        <button type="button" class="mobile-toggle" id="mobileMenuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu-drawer" id="mobileMenuDrawer" style="display: none;">
+      <a href="#servicios" class="nav-link">SERVICIOS</a>
+      <a href="#porteria" class="nav-link">PORTERÍA CONDOMINIOS</a>
+      <a href="#elegirnos" class="nav-link">POR QUÉ ELEGIRNOS</a>
+      <a href="#galeria" class="nav-link">GALERÍA OPERATIVA</a>
+      <a href="#clientes" class="nav-link">TESTIMONIOS</a>
+      <a href="#contacto" class="nav-link">CONTACTO</a>
+      <button type="button" class="btn btn-primary trigger-quote-modal" style="margin-top: 0.5rem;" data-service="General">
+        SOLICITAR UNA COTIZACIÓN
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION
+       ========================================================================= -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>+34 AÑOS DE EXPERIENCIA EN SEGURIDAD PRIVADA</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Seguridad privada para <span class="text-gradient">empresas, condominios</span> y centros comerciales
+          </h1>
+          
+          <p class="hero-desc">
+            34 años brindando soluciones de seguridad confiables para proteger personas, instalaciones y operaciones en Costa Rica.
+          </p>
+          
+          <div class="hero-buttons">
+            <button type="button" class="btn btn-primary trigger-quote-modal" data-service="General" id="btnHeroCotizar">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              Solicitar una cotización
+            </button>
+            <a href="#" class="btn btn-whatsapp js-wa-link" target="_blank" rel="noopener noreferrer" id="btnHeroWhatsapp">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.19c-.24.68-1.39 1.3-1.92 1.38-.51.08-1.17.11-3.66-.88-2.96-1.19-4.88-4.21-5.03-4.41-.15-.2-1.2-1.6-1.2-3.05s.76-2.17 1.03-2.47c.27-.3.59-.38.79-.38.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.59.84 2.05.91 2.2.08.15.13.33.03.53-.1.2-.15.33-.3.51-.15.18-.32.4-.46.54-.15.15-.31.31-.13.62.18.31.79 1.3 1.7 2.11 1.17 1.04 2.15 1.36 2.45 1.51.3.15.48.13.66-.08.18-.21.76-.88.96-1.18.2-.3.4-.25.68-.15.28.1 1.78.84 2.08.99.3.15.51.23.58.35.08.13.08.74-.16 1.42z"/>
+              </svg>
+              Hablar por WhatsApp
+            </a>
+          </div>
+
+          <!-- Hero Metrics Bar -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">+34</span>
+              <span class="stat-label">Años de Trayectoria</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Monitoreo y Rondas</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Acreditados por MSP</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">&lt;10m</span>
+              <span class="stat-label">Respuesta Inmediata</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Media Showcase -->
+        <div class="hero-media-wrapper">
+          <div class="hero-media-frame">
+            <img src="assets/images/hero_porteria.jpg" alt="Oficial de Portería Profesional en Garita de Condominio" class="hero-media-img" width="600" height="520">
+            <div class="hero-media-overlay">
+              <div class="media-tag">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+                <span>Control de Ingresos 24 Horas</span>
+              </div>
+              <span class="media-badge">SEGURIDAD RESIDENCIAL</span>
+            </div>
+          </div>
+
+          <!-- Floating Accent Card -->
+          <div class="hero-float-card">
+            <div class="float-icon-box">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="float-card-title">Cero Excusas, Acción Rápida</div>
+              <div class="float-card-subtitle">Protocolos operativos certificados</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PORTERÍA PROFESIONAL PARA CONDOMINIOS
+       ========================================================================= -->
+  <section class="section showcase-section" id="porteria">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PORTERÍA PROFESIONAL PARA CONDOMINIOS</span>
+        <h2 class="section-title">Control real, presencia profesional y tranquilidad para su comunidad</h2>
+        <p class="section-subtitle">
+          Brindamos personal altamente capacitado para el control de ingresos, atención a residentes y visitantes, supervisión constante y cumplimiento de protocolos de seguridad que protegen su comunidad las 24 horas.
+        </p>
+      </div>
+
+      <!-- Showcase Interactive Card -->
+      <div class="showcase-card">
+        <!-- Tabs Navigation -->
+        <div class="showcase-tabs-nav" role="tablist">
+          <button type="button" class="showcase-tab-btn active" data-tab="tab-monitoreo" role="tab" aria-selected="true">
+            <div class="tab-num">PILAR 01</div>
+            <div class="tab-title">Monitoreo y Control en Tiempo Real</div>
+          </button>
+          <button type="button" class="showcase-tab-btn" data-tab="tab-accesos" role="tab" aria-selected="false">
+            <div class="tab-num">PILAR 02</div>
+            <div class="tab-title">Seguridad en Cada Acceso, Siempre</div>
+          </button>
+          <button type="button" class="showcase-tab-btn" data-tab="tab-comunidad" role="tab" aria-selected="false">
+            <div class="tab-num">PILAR 03</div>
+            <div class="tab-title">Protegemos Su Comunidad</div>
+          </button>
+        </div>
+
+        <!-- Tab 1: Monitoreo -->
+        <div class="showcase-content-grid showcase-content-panel" id="tab-monitoreo" style="display: grid;">
+          <div class="showcase-text-col">
+            <h3>MONITOREO Y CONTROL EN TIEMPO REAL</h3>
+            <p>Supervisión constante de ingresos, salidas, cámaras y movimientos relevantes para mantener el orden y la seguridad operativa.</p>
+            <ul class="showcase-feature-list">
+              <li class="showcase-feature-item">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span>Registro digitalizado de placas vehiculares y visitantes</span>
+              </li>
+              <li class="showcase-feature-item">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span>Inspección continua de perímetro y áreas comunes</span>
+              </li>
+              <li class="showcase-feature-item">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span>Conexión directa con central de apoyo y supervisión móvil</span>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary trigger-quote-modal" data-service="Portería y Control de Acceso">
+              Solicitar una cotización
+            </button>
+          </div>
+          <div class="showcase-img-col">
+            <img src="assets/images/hero_porteria.jpg" alt="Monitoreo y Control de Accesos" class="showcase-img">
+          </div>
+        </div>
+
+        <!-- Tab 2: Accesos -->
+        <div class="showcase-content-grid showcase-content-panel" id="tab-accesos" style="display: none;">
+          <div class="showcase-text-col">
+            <h3>SEGURIDAD EN CADA ACCESO, SIEMPRE</h3>
+            <p>Validamos visitantes, proveedores y residentes autorizados mediante procesos claros y eficientes, sin entorpecer el flujo vehicular ni peatonal.</p>
+            <ul class="showcase-feature-list">
+              <li class="showcase-feature-item">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span>Verificación con residentes antes de conceder acceso a visitas</span>
+              </li>
+              <li class="showcase-feature-item">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span>Protocolo estricto para mensajería, paquetería y delivery</span>
+              </li>
+              <li class="showcase-feature-item">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span>Apertura de agujas vehiculares automatizadas y manuales</span>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary trigger-quote-modal" data-service="Control de Accesos Condominios">
+              Solicitar una cotización
+            </button>
+          </div>
+          <div class="showcase-img-col">
+            <img src="assets/images/galeria_perimetral.jpg" alt="Validación y Control de Accesos" class="showcase-img">
+          </div>
+        </div>
+
+        <!-- Tab 3: Comunidad -->
+        <div class="showcase-content-grid showcase-content-panel" id="tab-comunidad" style="display: none;">
+          <div class="showcase-text-col">
+            <h3>PROTEGEMOS LO MÁS IMPORTANTE: SU COMUNIDAD</h3>
+            <p>Creamos un entorno seguro para familias, residentes, visitantes y bienes comunes dentro del condominio, con presencia cordial y disuasoria.</p>
+            <ul class="showcase-feature-list">
+              <li class="showcase-feature-item">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span>Prevención activa de ingresos no deseados y merodeo</span>
+              </li>
+              <li class="showcase-feature-item">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span>Respeto riguroso de normativas y reglamento interno condominal</span>
+              </li>
+              <li class="showcase-feature-item">
+                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span>Atención con educación, respeto y trato humano de excelencia</span>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary trigger-quote-modal" data-service="Seguridad Residencial Integral">
+              Solicitar una cotización
+            </button>
+          </div>
+          <div class="showcase-img-col">
+            <img src="assets/images/seguridad_fisica.jpg" alt="Protección Integral de Comunidades" class="showcase-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       NUESTROS SERVICIOS DE SEGURIDAD INTEGRAL
+       ========================================================================= -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">SERVICIOS INTEGRALES</span>
+        <h2 class="section-title">NUESTROS SERVICIOS DE SEGURIDAD INTEGRAL</h2>
+        <p class="section-subtitle">
+          Brindamos soluciones de seguridad diseñadas para proteger personas, bienes y negocios con tecnología avanzada y respuesta profesional inmediata
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="services-grid">
+        <!-- Servicio 1: Seguridad Física -->
+        <article class="service-card">
+          <div class="service-card-media">
+            <img src="assets/images/seguridad_fisica.jpg" alt="Servicio de Seguridad Física Profesional" class="service-img" loading="lazy">
+            <span class="service-badge">PRESENCIAL & DISUASIVA</span>
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">SEGURIDAD FÍSICA</h3>
+            <p class="service-desc">
+              En Seguridad SALT ofrecemos servicios de seguridad privada para empresas, condominios, industrias, centros comerciales y propiedades residenciales. Nuestro personal de seguridad está altamente capacitado para prevenir riesgos, controlar accesos y proteger personas, bienes e instalaciones mediante protocolos de vigilancia profesional adaptados a cada operación.
+            </p>
+            <ul class="service-checklist">
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Condominios residenciales</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Centros Comerciales y plazas</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Bodegas e instalaciones logísticas</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Almacenes fiscales e industrias</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Oficentros y corporativos</span>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary trigger-quote-modal" data-service="Seguridad Física" id="btnCotizarFisica">
+              Solicitar una cotización
+            </button>
+          </div>
+        </article>
+
+        <!-- Servicio 2: Seguridad Electrónica -->
+        <article class="service-card">
+          <div class="service-card-media">
+            <img src="assets/images/seguridad_electronica.jpg" alt="Centro de Monitoreo y Seguridad Electrónica" class="service-img" loading="lazy">
+            <span class="service-badge">TECNOLOGÍA & CCTV</span>
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">SEGURIDAD ELECTRÓNICA</h3>
+            <p class="service-desc">
+              Implementamos soluciones de seguridad electrónica para empresas, comercios, condominios y residencias mediante sistemas de videovigilancia, monitoreo de alarmas, control de accesos y tecnología inteligente. Nuestros sistemas permiten supervisar sus instalaciones en tiempo real para mejorar la prevención y la respuesta ante cualquier incidente.
+            </p>
+            <ul class="service-checklist">
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Monitoreo de alarmas 24/7</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Monitoreo de cámaras en tiempo real</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Control de acceso biométrico y remoto</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Venta e Instalación: cámaras, grabadores y NVR</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Cercas eléctricas perimetrales</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Agujas vehiculares y video portería IP</span>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary trigger-quote-modal" data-service="Seguridad Electrónica" id="btnCotizarElectronica">
+              Solicitar una cotización
+            </button>
+          </div>
+        </article>
+
+        <!-- Servicio 3: Servicios Especializados -->
+        <article class="service-card">
+          <div class="service-card-media">
+            <img src="assets/images/servicios_especializados.jpg" alt="Servicios Especializados y Custodia Táctica" class="service-img" loading="lazy">
+            <span class="service-badge">OPERACIONES TÁCTICAS</span>
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">SERVICIOS ESPECIALIZADOS DE SEGURIDAD</h3>
+            <p class="service-desc">
+              Complementamos nuestros servicios de seguridad privada con soluciones especializadas para la protección de personas, mercancías y eventos. Contamos con personal capacitado para custodias, respuesta armada, monitoreo GPS y operaciones especiales que requieren altos estándares de seguridad y supervisión.
+            </p>
+            <ul class="service-checklist">
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Custodia de personas y protección VIP</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Fiestas privadas, eventos masivos y conciertos</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Alquiler de vehículos de seguridad</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Respuesta armada y patrullas tácticas</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Custodia y escolta de camiones de carga</span>
+              </li>
+              <li class="service-check-item">
+                <span class="service-check-bullet">✔</span>
+                <span>Monitoreo satelital GPS de flotas</span>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary trigger-quote-modal" data-service="Servicios Especializados" id="btnCotizarEspecializados">
+              Solicitar una cotización
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Banner de Asesoría a Medida -->
+      <div class="cta-ribbon" style="margin-top: 4.5rem;">
+        <div class="cta-ribbon-text">
+          <h3>¿Necesita un plan de seguridad a la medida?</h3>
+          <p>Solicite una evaluación y reciba una propuesta adaptada a su operación sin ningún compromiso.</p>
+        </div>
+        <button type="button" class="btn btn-primary trigger-quote-modal" data-service="Plan a la Medida" id="btnRibbonCotizar">
+          Solicitar una cotización
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       GALERÍA OPERATIVA: MÁS QUE PROMESAS: ACCIÓN
+       ========================================================================= -->
+  <section class="section" id="galeria" style="background-color: var(--color-bg-surface);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">NUESTRO EQUIPO EN CADA ESCENARIO</span>
+        <h2 class="section-title">Más que promesas: acción</h2>
+        <p class="section-subtitle">
+          Observe nuestro despliegue en campo: disciplina, tecnología y presencia profesional constante.
+        </p>
+      </div>
+
+      <!-- Gallery Masonry Grid -->
+      <div class="gallery-grid">
+        <!-- 1. Supervisión -->
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Ver imagen de Supervisión Operativa">
+          <img src="assets/images/galeria_supervision.jpg" alt="Supervisión Operativa en Terreno" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">SUPERVISIÓN OPERATIVA</div>
+            <span class="gallery-zoom-badge">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+              Ver fotografía
+            </span>
+          </div>
+        </div>
+
+        <!-- 2. Respuesta Armada -->
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Ver imagen de Respuesta Armada">
+          <img src="assets/images/galeria_armada.jpg" alt="Unidad de Respuesta Armada" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">RESPUESTA ARMADA</div>
+            <span class="gallery-zoom-badge">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+              Ver fotografía
+            </span>
+          </div>
+        </div>
+
+        <!-- 3. Sistema de Rondas -->
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Ver imagen de Sistema de Rondas">
+          <img src="assets/images/galeria_rondas.jpg" alt="Sistema de Rondas y Verificación Perimetral" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">SISTEMA DE RONDAS</div>
+            <span class="gallery-zoom-badge">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+              Ver fotografía
+            </span>
+          </div>
+        </div>
+
+        <!-- 4. Seguridad Perimetral -->
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Ver imagen de Seguridad Perimetral">
+          <img src="assets/images/galeria_perimetral.jpg" alt="Seguridad Perimetral y Agujas Vehiculares" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">SEGURIDAD PERIMETRAL</div>
+            <span class="gallery-zoom-badge">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+              Ver fotografía
+            </span>
+          </div>
+        </div>
+
+        <!-- 5. Monitoreo y Acceso -->
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Ver imagen de Monitoreo Remoto">
+          <img src="assets/images/seguridad_electronica.jpg" alt="Monitoreo y Control de Acceso Remoto" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">MONITOREO Y ACCESO REMOTO</div>
+            <span class="gallery-zoom-badge">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+              Ver fotografía
+            </span>
+          </div>
+        </div>
+
+        <!-- 6. Seguridad Física -->
+        <div class="gallery-item" tabindex="0" role="button" aria-label="Ver imagen de Seguridad Física">
+          <img src="assets/images/seguridad_fisica.jpg" alt="Seguridad Física e Instalaciones" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">SEGURIDAD FÍSICA EN SITIO</div>
+            <span class="gallery-zoom-badge">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+              Ver fotografía
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       POR QUÉ ELEGIRNOS: LA DIFERENCIA ESTÁ EN CÓMO OPERAMOS
+       ========================================================================= -->
+  <section class="section" id="elegirnos">
+    <div class="container">
+      <div class="diferencial-grid">
+        <!-- Left text -->
+        <div>
+          <span class="section-tag">RESPALDO & EXPERIENCIA</span>
+          <h2 class="section-title">LA DIFERENCIA ESTÁ EN CÓMO OPERAMOS</h2>
+          <p style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1.25rem;">
+            Porque la seguridad no se improvisa, se estructura
+          </p>
+          <p style="color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2rem; font-size: 1.05rem;">
+            Más de 30 años de experiencia respaldan una operación formal y autorizada por el Ministerio de Seguridad Pública, con cumplimiento de garantías sociales, turnos estratégicos que mantienen el rendimiento del personal, supervisión constante en cada servicio y protocolos operativos actualizados a los escenarios de riesgos actuales.
+          </p>
+          <button type="button" class="btn btn-primary trigger-quote-modal" data-service="Evaluación Operativa">
+            Evaluar mi operación ahora
+          </button>
+        </div>
+
+        <!-- Right 4 Key Cards -->
+        <div class="diferencial-cards-grid">
+          <!-- Card 1 -->
+          <div class="diferencial-mini-card">
+            <div class="mini-card-icon">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h4 class="mini-card-title">Autorizados por el MSP</h4>
+            <p class="mini-card-desc">Operación legal y formal con todos los permisos y licencias vigentes ante el Ministerio de Seguridad Pública.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="diferencial-mini-card">
+            <div class="mini-card-icon">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h4 class="mini-card-title">100% Garantías Sociales</h4>
+            <p class="mini-card-desc">Personal en planilla con CCSS, pólizas del INS y estabilidad laboral que asegura compromiso y baja rotación.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="diferencial-mini-card">
+            <div class="mini-card-icon">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h4 class="mini-card-title">Turnos Estratégicos</h4>
+            <p class="mini-card-desc">Esquemas de relevos estudiados para evitar el agotamiento físico, garantizando estado de alerta continuo.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="diferencial-mini-card">
+            <div class="mini-card-icon">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+              </svg>
+            </div>
+            <h4 class="mini-card-title">Supervisión en Terreno</h4>
+            <p class="mini-card-desc">Supervisores en ruta 24/7 que auditan puestos, aplican pruebas de reacción y respaldan al oficial en turno.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TESTIMONIOS DE CLIENTES
+       ========================================================================= -->
+  <section class="section" id="clientes" style="background-color: var(--color-bg-surface);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">EXPERIENCIAS REALES</span>
+        <h2 class="section-title">LO QUE DICEN NUESTROS CLIENTES</h2>
+        <p class="section-subtitle">
+          Testimonios de quienes decidieron operar con seguridad profesional
+        </p>
+      </div>
+
+      <div class="testimonials-wrapper">
+        <div class="testimonial-carousel">
+          <!-- Slide 1: Un legado que heredó -->
+          <div class="testimonial-slide active">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Como uno de los fundadores de la seguridad privada en Costa Rica, hemos impulsado esta actividad dejando una huella basada en la responsabilidad, la disciplina y el compromiso con la protección de las personas. Ese legado hoy continúa vivo en Seguridad SALT, una empresa que ha asumido con orgullo la responsabilidad de mantener y fortalecer esos principios."
+            </p>
+            <div class="testimonial-author-row">
+              <div class="author-info">
+                <h4>Un Legado que Perdura</h4>
+                <p>Fundación y Principios Operativos</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Edward Quiceno -->
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Después de evaluar diferentes opciones de empresas de seguridad, dimos con la opción ideal. Compromiso, responsabilidad, cero excusas y soluciones inmediatas, la buena comunicación directa con el equipo directivo, la apertura y la siempre disposición a escuchar y aportar, marcan la diferencia en el servicio que ofrece Seguridad SALT. En esta empresa conseguimos respaldo de personal capacitado, personas que con respeto y rápida acción ejecutan las tareas siguiendo los protocolos establecidos. Al ser un proyecto grande con retos operativos, en todo momento demostraron rápida adaptación y aplicación de mejoras en beneficio de los residentes."
+            </p>
+            <div class="testimonial-author-row">
+              <div class="author-info">
+                <h4>Edward Quiceno</h4>
+                <p>Administrador de Condominios — Parques del Sol</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: INMOBILIARIA MAP -->
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Excelente servicio. Destacan por su profesionalismo, puntualidad y el riguroso control de su gestión, brindando una tranquilidad total a todos los residentes del condominio. Una empresa de seguridad altamente confiable, la recomiendo sin lugar a dudas."
+            </p>
+            <div class="testimonial-author-row">
+              <div class="author-info">
+                <h4>Inmobiliaria MAP</h4>
+                <p>Administración de Proyectos Inmobiliarios</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Navigation Arrows -->
+        <div class="carousel-nav-arrows">
+          <button type="button" class="carousel-arrow" id="prevTestimonial" aria-label="Testimonio anterior">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button type="button" class="carousel-arrow" id="nextTestimonial" aria-label="Siguiente testimonio">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       QUIÉNES SOMOS / ALCANCE NACIONAL
+       ========================================================================= -->
+  <section class="section" id="quienes-somos">
+    <div class="container">
+      <div class="about-box">
+        <div class="about-text">
+          <span class="section-tag">QUIÉNES SOMOS</span>
+          <h3>Seguridad privada para empresas y condominios en Costa Rica</h3>
+          <p>
+            En <strong>Seguridad SALT</strong> contamos con más de 34 años de experiencia brindando soluciones de seguridad física y electrónica para empresas, condominios, centros comerciales, bodegas, oficentros e instituciones.
+          </p>
+          <p>
+            Nuestro personal está altamente capacitado para operar bajo protocolos profesionales que garantizan el control de accesos, monitoreo permanente y protección de personas, bienes e instalaciones.
+          </p>
+          <p>
+            Complementamos nuestros servicios con tecnología de videovigilancia, monitoreo de alarmas, control de acceso, respuesta operativa y supervisión continua para ofrecer soluciones integrales adaptadas a cada cliente.
+          </p>
+        </div>
+        <div class="about-highlight-list">
+          <div class="about-highlight-item">
+            <div>
+              <div class="about-highlight-title">Cobertura en Todo el País</div>
+              <div class="about-highlight-sub">Operaciones y presencia en las 7 provincias de Costa Rica</div>
+            </div>
+          </div>
+          <div class="about-highlight-item">
+            <div>
+              <div class="about-highlight-title">Respaldo Integral 24/7/365</div>
+              <div class="about-highlight-sub">Central de radio y supervisión activa los 365 días del año</div>
+            </div>
+          </div>
+          <div class="about-highlight-item">
+            <div>
+              <div class="about-highlight-title">Cultura de Cero Excusas</div>
+              <div class="about-highlight-sub">Enfoque en soluciones inmediatas y rendición de cuentas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CONTACTO & CONVERSIÓN
+       ========================================================================= -->
+  <section class="section contact-section" id="contacto">
+    <div class="container">
+      <div class="contact-card-main">
+        <span class="section-tag">ASESORÍA OPERATIVA</span>
+        <h2>HABLE CON UN ASESOR EN SEGURIDAD OPERATIVA</h2>
+        <p>Evalúe hoy si su operación está realmente protegida</p>
+
+        <div class="contact-buttons-group">
+          <button type="button" class="btn btn-primary trigger-quote-modal" data-service="Evaluación Integral" id="btnFooterCotizar">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Solicitar una cotización
+          </button>
+          
+          <a href="#" class="btn btn-whatsapp js-wa-link" target="_blank" rel="noopener noreferrer" id="btnFooterWhatsapp">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.19c-.24.68-1.39 1.3-1.92 1.38-.51.08-1.17.11-3.66-.88-2.96-1.19-4.88-4.21-5.03-4.41-.15-.2-1.2-1.6-1.2-3.05s.76-2.17 1.03-2.47c.27-.3.59-.38.79-.38.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.59.84 2.05.91 2.2.08.15.13.33.03.53-.1.2-.15.33-.3.51-.15.18-.32.4-.46.54-.15.15-.31.31-.13.62.18.31.79 1.3 1.7 2.11 1.17 1.04 2.15 1.36 2.45 1.51.3.15.48.13.66-.08.18-.21.76-.88.96-1.18.2-.3.4-.25.68-.15.28.1 1.78.84 2.08.99.3.15.51.23.58.35.08.13.08.74-.16 1.42z"/>
+            </svg>
+            Contactar por WhatsApp
+          </a>
+        </div>
+
+        <div class="contact-info-pills">
+          <div class="info-pill">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span class="js-wa-display">+506 8567-4793</span>
+          </div>
+          <div class="info-pill">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <span class="js-email-display">contacto@seguridadsalt.com</span>
+          </div>
+          <div class="info-pill">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>San José, Costa Rica — Cobertura Nacional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <img src="assets/logo-emblem.svg" alt="Seguridad SALT" width="46" height="46">
+            <span style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 900; color: #FFF;">
+              SEGURIDAD <span style="color: var(--color-primary);">SALT</span>
+            </span>
+          </div>
+          <p>
+            Soluciones de seguridad privada, portería para condominios y protección electrónica con más de 34 años de experiencia en Costa Rica.
+          </p>
+        </div>
+
+        <!-- Col 2: Servicios -->
+        <div class="footer-col">
+          <h4>SERVICIOS</h4>
+          <ul class="footer-links">
+            <li><a href="#servicios" class="trigger-quote-modal" data-service="Seguridad Física">Seguridad Física</a></li>
+            <li><a href="#servicios" class="trigger-quote-modal" data-service="Seguridad Electrónica">Seguridad Electrónica</a></li>
+            <li><a href="#servicios" class="trigger-quote-modal" data-service="Portería Condominios">Portería para Condominios</a></li>
+            <li><a href="#servicios" class="trigger-quote-modal" data-service="Custodia Especializada">Custodia Especializada</a></li>
+            <li><a href="#servicios" class="trigger-quote-modal" data-service="Monitoreo CCTV">Monitoreo CCTV y Alarmas</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Empresa -->
+        <div class="footer-col">
+          <h4>EMPRESA</h4>
+          <ul class="footer-links">
+            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="#elegirnos">Por Qué Elegirnos</a></li>
+            <li><a href="#galeria">Galería Operativa</a></li>
+            <li><a href="#clientes">Testimonios</a></li>
+            <li><a href="#contacto">Contacto y Ubicación</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Horarios y Legal -->
+        <div class="footer-col">
+          <h4>ATENCIÓN</h4>
+          <p style="margin-bottom: 0.75rem;">
+            <strong>Operaciones:</strong> 24/7 los 365 días del año<br>
+            <strong>Oficinas:</strong> Lun a Vie 8:00am - 5:00pm
+          </p>
+          <div class="social-links" style="margin-top: 1.25rem;">
+            <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          Copyright © 2026 <strong>SEGURIDAD SALT</strong>. Todos los derechos reservados.
+        </div>
+        <div>
+          <a href="#contacto" style="margin-right: 1.5rem;">Política de Privacidad</a>
+          <a href="#contacto">Política de Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL DE SOLICITUD DE COTIZACIÓN
+       ========================================================================= -->
+  <div class="modal-overlay" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="modalQuoteTitle">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" id="quoteModalClose" aria-label="Cerrar modal">&times;</button>
+      
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalQuoteTitle">Solicitar Cotización</h2>
+        <p class="modal-subtitle">Por favor complete el formulario y un especialista operativo de Seguridad SALT se pondrá en contacto a la brevedad.</p>
+      </div>
+
+      <form id="quoteForm">
+        <div class="form-group">
+          <label class="form-label" for="quoteFullName">Nombre Completo *</label>
+          <input type="text" id="quoteFullName" name="full_name" class="form-control" placeholder="Ej: Juan Pérez" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="quoteClientType">Tipo de Cliente *</label>
+            <select id="quoteClientType" name="client_type" class="form-control" required>
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="Empresa">Empresa / Corporativo</option>
+              <option value="Residencial">Condominio / Residencial</option>
+              <option value="Comercio">Centro Comercial / Comercio</option>
+              <option value="Industrial">Bodega / Industrial</option>
+              <option value="Evento">Evento / Concierto</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quotePhone">Teléfono de Contacto *</label>
+            <input type="tel" id="quotePhone" name="phone" class="form-control" placeholder="Ej: 8888-8888" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="quoteEmail">Correo Electrónico *</label>
+            <input type="email" id="quoteEmail" name="email" class="form-control" placeholder="correo@ejemplo.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quoteServiceSelect">Servicio Requerido *</label>
+            <select id="quoteServiceSelect" name="service_type" class="form-control" required>
+              <option value="Seguridad Física">Seguridad Física / Oficiales</option>
+              <option value="Portería Condominios">Portería para Condominios</option>
+              <option value="Seguridad Electrónica">Seguridad Electrónica / CCTV</option>
+              <option value="Servicios Especializados">Servicios Especializados / Custodia</option>
+              <option value="Plan a la Medida">Plan Integral a la Medida</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="quoteComments">Detalles o Comentarios de su Requerimiento *</label>
+          <textarea id="quoteComments" name="comments" class="form-control" rows="3" placeholder="Indique cantidad de puestos, ubicación, horarios requeridos o detalles de su operación..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;" id="btnSubmitQuote">
+          Enviar Solicitud de Cotización
+        </button>
+
+        <div class="form-feedback" id="quoteFeedback"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       WIDGET FLOTANTE DE WHATSAPP (JOINCHAT STYLE)
+       ========================================================================= -->
+  <div class="whatsapp-widget-wrap">
+    <!-- Chat Dialog Box -->
+    <div class="whatsapp-chatbox" id="waChatbox">
+      <div class="chatbox-header">
+        <div class="chatbox-header-title">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.19c-.24.68-1.39 1.3-1.92 1.38-.51.08-1.17.11-3.66-.88-2.96-1.19-4.88-4.21-5.03-4.41-.15-.2-1.2-1.6-1.2-3.05s.76-2.17 1.03-2.47c.27-.3.59-.38.79-.38.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.59.84 2.05.91 2.2.08.15.13.33.03.53-.1.2-.15.33-.3.51-.15.18-.32.4-.46.54-.15.15-.31.31-.13.62.18.31.79 1.3 1.7 2.11 1.17 1.04 2.15 1.36 2.45 1.51.3.15.48.13.66-.08.18-.21.76-.88.96-1.18.2-.3.4-.25.68-.15.28.1 1.78.84 2.08.99.3.15.51.23.58.35.08.13.08.74-.16 1.42z"/></svg>
+          <span>Seguridad SALT</span>
+        </div>
+        <button type="button" class="chatbox-close" id="waChatboxClose" aria-label="Cerrar chat">&times;</button>
+      </div>
+      <div class="chatbox-body">
+        <div class="chatbox-bubble">
+          👋 Bienvenido a <strong>Seguridad SALT</strong>.<br><br>
+          ¿Necesita un servicio de seguridad privada para su empresa, condominio o comercio?<br><br>
+          Nuestros asesores operativos están listos para brindarle una cotización personalizada sin compromiso.
+        </div>
+        <button type="button" class="btn btn-whatsapp" style="width: 100%;" id="waStartChatBtn">
+          Hablar con un asesor
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating WhatsApp Trigger Button -->
+    <button type="button" class="whatsapp-float-btn" id="waWidgetToggle" aria-label="Abrir chat de WhatsApp">
+      <span class="whatsapp-pulse-ring"></span>
+      <svg width="34" height="34" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.19c-.24.68-1.39 1.3-1.92 1.38-.51.08-1.17.11-3.66-.88-2.96-1.19-4.88-4.21-5.03-4.41-.15-.2-1.2-1.6-1.2-3.05s.76-2.17 1.03-2.47c.27-.3.59-.38.79-.38.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.59.84 2.05.91 2.2.08.15.13.33.03.53-.1.2-.15.33-.3.51-.15.18-.32.4-.46.54-.15.15-.31.31-.13.62.18.31.79 1.3 1.7 2.11 1.17 1.04 2.15 1.36 2.45 1.51.3.15.48.13.66-.08.18-.21.76-.88.96-1.18.2-.3.4-.25.68-.15.28.1 1.78.84 2.08.99.3.15.51.23.58.35.08.13.08.74-.16 1.42z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       LIGHTBOX MODAL PARA GALERÍA
+       ========================================================================= -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">&times;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

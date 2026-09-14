@@ -1,0 +1,16 @@
+{
+  "name": "seguridad-salt",
+  "version": "1.0.0",
+  "description": "Sitio web corporativo de Seguridad SALT con bitácora en Supabase",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "seguridad",
+    "costa-rica",
+    "seguridad-salt"
+  ],
+  "author": "Seguridad SALT",
+  "license": "ISC"
+}

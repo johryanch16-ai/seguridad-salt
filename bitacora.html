@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitácora de Cotizaciones | Seguridad SALT</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo-emblem.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B0C10;
+      --card: #13151D;
+      --border: rgba(255,255,255,0.08);
+      --red: #D31A2B;
+      --text: #F3F4F6;
+      --muted: #9CA3AF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+    .brand span { color: var(--red); }
+    .badge {
+      background: rgba(211,26,43,0.15);
+      border: 1px solid var(--red);
+      color: #FFF;
+      padding: 0.35rem 0.85rem;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .btn {
+      background: var(--red);
+      color: #FFF;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      border: none;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+      background: #0B0C10;
+      border: 1px solid var(--border);
+      color: #FFF;
+      padding: 0.65rem 1rem;
+      border-radius: 6px;
+      outline: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+    tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: rgba(245, 158, 11, 0.15);
+      color: #F59E0B;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="brand">
+      <img src="assets/logo-emblem.svg" width="46" height="46" alt="Seguridad SALT">
+      <div>
+        <h1>SEGURIDAD <span>SALT</span></h1>
+        <div style="font-size: 0.8rem; color: var(--muted);">Panel Administrativo de Cotizaciones</div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 1rem;">
+      <a href="index.html" class="btn btn-secondary">← Volver al Sitio</a>
+      <button class="btn" onclick="exportToCSV()">📥 Exportar a CSV</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="toolbar">
+      <input type="text" id="searchInput" class="search-box" placeholder="Buscar por cliente, teléfono, correo o servicio..." onkeyup="filterTable()">
+      <button class="btn btn-secondary" onclick="loadQuotes()">🔄 Actualizar Bitácora</button>
+    </div>
+
+    <div style="overflow-x: auto;">
+      <table id="quotesTable">
+        <thead>
+          <tr>
+            <th>Fecha / Hora</th>
+            <th>Cliente</th>
+            <th>Tipo</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Servicio</th>
+            <th>Detalles</th>
+            <th>Origen</th>
+          </tr>
+        </thead>
+        <tbody id="quotesTableBody">
+          <!-- Rows will be injected by JavaScript -->
+        </tbody>
+      </table>
+      <div id="emptyMessage" class="empty-state" style="display: none;">
+        No hay registros en la bitácora todavía. Realice una solicitud de prueba desde el formulario del sitio.
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script>
+    async function loadQuotes() {
+      const tbody = document.getElementById('quotesTableBody');
+      const empty = document.getElementById('emptyMessage');
+      tbody.innerHTML = '';
+      
+      let allQuotes = [];
+
+      // 1. Cargar desde Supabase si está configurado
+      if (typeof SALT_CONFIG !== 'undefined' && SALT_CONFIG.supabaseUrl && SALT_CONFIG.supabaseAnonKey) {
+        try {
+          const url = `${SALT_CONFIG.supabaseUrl.replace(/\/$/, '')}/rest/v1/cotizaciones?select=*&order=created_at.desc`;
+          const res = await fetch(url, {
+            headers: {
+              'apikey': SALT_CONFIG.supabaseAnonKey,
+              'Authorization': `Bearer ${SALT_CONFIG.supabaseAnonKey}`
+            }
+          });
+          if (res.ok) {
+            const data = await res.json();
+            allQuotes = data.map(item => ({ ...item, origen: 'Supabase Cloud' }));
+          }
+        } catch (e) {
+          console.warn('Error al leer de Supabase:', e);
+        }
+      }
+
+      // 2. Si no hay Supabase o no arrojó datos, leer el respaldo local
+      if (allQuotes.length === 0) {
+        const local = JSON.parse(localStorage.getItem('salt_cotizaciones_bitacora') || '[]');
+        allQuotes = local.map(item => ({ ...item, origen: 'Respaldo Local' }));
+      }
+
+      if (allQuotes.length === 0) {
+        empty.style.display = 'block';
+        return;
+      }
+
+      empty.style.display = 'none';
+      allQuotes.forEach(q => {
+        const dateStr = q.created_at ? new Date(q.created_at).toLocaleString('es-CR') : 'Reciente';
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${dateStr}</td>
+          <td><strong>${escapeHtml(q.full_name || '')}</strong></td>
+          <td>${escapeHtml(q.client_type || 'General')}</td>
+          <td><a href="tel:${q.phone}" style="color: var(--red); font-weight: 700;">${escapeHtml(q.phone || '')}</a></td>
+          <td>${escapeHtml(q.email || '')}</td>
+          <td><span class="badge">${escapeHtml(q.service_type || '')}</span></td>
+          <td style="max-width: 280px; word-break: break-word;">${escapeHtml(q.comments || '')}</td>
+          <td><span class="status-badge">${escapeHtml(q.origen || 'Local')}</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterTable() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      const rows = document.querySelectorAll('#quotesTableBody tr');
+      rows.forEach(r => {
+        const text = r.textContent.toLowerCase();
+        r.style.display = text.includes(q) ? '' : 'none';
+      });
+    }
+
+    function exportToCSV() {
+      const rows = Array.from(document.querySelectorAll('#quotesTable tr'));
+      const csv = rows.map(r => {
+        return Array.from(r.querySelectorAll('th, td')).map(cell => `"${cell.textContent.replace(/"/g, '""')}"`).join(',');
+      }).join('\n');
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `bitacora_cotizaciones_salt_${new Date().toISOString().slice(0,10)}.csv`;
+      link.click();
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    window.onload = loadQuotes;
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="100%" height="100%">
+  <defs>
+    <!-- Clip path to keep everything neatly inside the circular badge -->
+    <clipPath id="emblem-circle-clip">
+      <circle cx="160" cy="160" r="140" />
+    </clipPath>
+  </defs>
+
+  <!-- Circular Badge (Background is 100% transparent outside) -->
+  <g clip-path="url(#emblem-circle-clip)">
+    <!-- Left Half: Crimson Red -->
+    <path d="M 160,20 A 140,140 0 0,0 160,300 Z" fill="#D31A2B" />
+    <!-- Right Half: Dark Obsidian / Black -->
+    <path d="M 160,20 A 140,140 0 0,1 160,300 Z" fill="#111216" />
+    
+    <!-- White Horizon Swoosh Arc -->
+    <path d="M 20,225 Q 160,175 300,225 Q 160,185 20,225 Z" fill="#FFFFFF" />
+
+    <!-- Skyline / Buildings in Perspective -->
+    <!-- Left Building (Black facade with Red Windows) -->
+    <path d="M 85,205 L 122,192 L 122,300 L 85,290 Z" fill="#111216" />
+    <path d="M 122,192 L 138,198 L 138,300 L 122,300 Z" fill="#FFFFFF" />
+    <rect x="97" y="215" width="8" height="20" fill="#D31A2B" rx="1" />
+    <rect x="97" y="245" width="8" height="24" fill="#D31A2B" rx="1" />
+
+    <!-- Center Main Skyscraper (Tallest: Left face black, Right face white with black windows) -->
+    <path d="M 138,135 L 165,118 L 165,300 L 138,300 Z" fill="#111216" />
+    <path d="M 165,118 L 195,135 L 195,300 L 165,300 Z" fill="#FFFFFF" />
+    <rect x="172" y="152" width="9" height="18" fill="#111216" rx="1" />
+    <rect x="172" y="180" width="9" height="18" fill="#111216" rx="1" />
+    <rect x="172" y="208" width="9" height="18" fill="#111216" rx="1" />
+
+    <!-- Right Building (White facade with Red Windows) -->
+    <path d="M 195,178 L 228,195 L 228,300 L 195,300 Z" fill="#FFFFFF" />
+    <rect x="207" y="208" width="8" height="20" fill="#D31A2B" rx="1" />
+    <rect x="207" y="238" width="8" height="22" fill="#D31A2B" rx="1" />
+  </g>
+  
+  <!-- Subtle circular metallic border to pop against dark backgrounds -->
+  <circle cx="160" cy="160" r="140" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+</svg>
