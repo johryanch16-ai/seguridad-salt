@@ -36,9 +36,8 @@ const SALT_CONFIG = {
   linkedinUrl: "https://www.linkedin.com/",
 
   // Configuración de Supabase (Bitácora de Cotizaciones)
-  // Complete con la URL y Anon Key de su proyecto en Supabase (Settings > API)
-  supabaseUrl: "", // Ej: "https://xyzcompany.supabase.co"
-  supabaseAnonKey: "" // Ej: "eyJhbGciOiJIUzI1NiIsInR5cCI6..."
+  supabaseUrl: "https://vshqhahmhljokkekhlur.supabase.co",
+  supabaseAnonKey: "sb_publishable_VtytL0ovTYKtS5RaMayacQ_dWlQN00-"
 };
 
 // Congelar el objeto para evitar modificaciones no deseadas en tiempo de ejecución

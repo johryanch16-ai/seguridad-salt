@@ -318,8 +318,8 @@ async function saveQuoteToBitacora(payload) {
 
   // B. Envío a Supabase si las credenciales están configuradas
   if (typeof SALT_CONFIG !== 'undefined' && SALT_CONFIG.supabaseUrl && SALT_CONFIG.supabaseAnonKey) {
-    try {
-      const url = `${SALT_CONFIG.supabaseUrl.replace(/\/$/, '')}/rest/v1/cotizaciones`;
+      const baseUrl = SALT_CONFIG.supabaseUrl.replace(/\/rest\/v1\/?$/, '').replace(/\/+$/, '');
+      const url = `${baseUrl}/rest/v1/cotizaciones`;
       const response = await fetch(url, {
         method: 'POST',
         headers: {

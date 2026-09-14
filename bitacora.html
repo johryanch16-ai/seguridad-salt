@@ -187,7 +187,8 @@
       // 1. Cargar desde Supabase si está configurado
       if (typeof SALT_CONFIG !== 'undefined' && SALT_CONFIG.supabaseUrl && SALT_CONFIG.supabaseAnonKey) {
         try {
-          const url = `${SALT_CONFIG.supabaseUrl.replace(/\/$/, '')}/rest/v1/cotizaciones?select=*&order=created_at.desc`;
+          const baseUrl = SALT_CONFIG.supabaseUrl.replace(/\/rest\/v1\/?$/, '').replace(/\/+$/, '');
+          const url = `${baseUrl}/rest/v1/cotizaciones?select=*&order=created_at.desc`;
           const res = await fetch(url, {
             headers: {
               'apikey': SALT_CONFIG.supabaseAnonKey,
