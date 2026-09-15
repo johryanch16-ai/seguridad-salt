@@ -8,12 +8,11 @@ const SALT_CONFIG = {
   // Nombre de la empresa
   companyName: "SEGURIDAD SALT",
   
-  // Número de WhatsApp (código de país sin signos + o espacios, ej: 50685674793)
-  // Coloque aquí el número definitivo cuando el cliente lo proporcione
-  whatsappNumber: "50685674793", 
+  // Número de WhatsApp (código de país sin signos + o espacios, ej: 50687527661)
+  whatsappNumber: "50687527661", 
 
   // Número visible en textos o botones
-  whatsappDisplay: "+506 8567-4793",
+  whatsappDisplay: "+506 8752-7661",
 
   // Correo receptor de cotizaciones oficiales de clientes
   contactEmail: "saltproteccion@gmail.com",

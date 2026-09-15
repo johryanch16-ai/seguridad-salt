@@ -482,7 +482,7 @@ function initWhatsAppWidget() {
 
   if (sendBtn) {
     sendBtn.addEventListener('click', () => {
-      const waNumber = (typeof SALT_CONFIG !== 'undefined' && SALT_CONFIG.whatsappNumber) ? SALT_CONFIG.whatsappNumber : '50685674793';
+      const waNumber = (typeof SALT_CONFIG !== 'undefined' && SALT_CONFIG.whatsappNumber) ? SALT_CONFIG.whatsappNumber : '50687527661';
       const msg = "Hola, estoy navegando en la web de Seguridad SALT y me gustaría solicitar información y cotización para un servicio de seguridad.";
       window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
       chatbox.classList.remove('active');
