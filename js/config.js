@@ -15,10 +15,12 @@ const SALT_CONFIG = {
   // Número visible en textos o botones
   whatsappDisplay: "+506 8567-4793",
 
-  // Correo electrónico receptor de cotizaciones y consultas
-  contactEmail: "contacto@seguridadsalt.com",
+  // Correo receptor de cotizaciones oficiales de clientes
+  contactEmail: "saltproteccion@gmail.com",
+  quoteNotificationEmail: "saltproteccion@gmail.com",
 
-  // Teléfono de central telefónica (opcional)
+  // Asunto de las cotizaciones
+  defaultQuoteSubject: "Nueva Solicitud de Cotización - Seguridad SALT",
   phoneCentral: "+506 2200-0000",
 
   // Mensaje por defecto para el chat de WhatsApp

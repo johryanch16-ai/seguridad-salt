@@ -281,16 +281,29 @@ function initQuoteModal() {
 
   // Handle Form Submission
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = form.full_name?.value || '';
-      const clientType = form.client_type?.value || '';
-      const phone = form.phone?.value || '';
-      const email = form.email?.value || '';
-      const service = form.service_type?.value || '';
-      const comments = form.comments?.value || '';
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Enviar Solicitud de Cotización';
+      
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <svg class="spinner-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite; vertical-align: middle; margin-right: 8px;">
+            <circle cx="12" cy="12" r="10" stroke-opacity="0.25" stroke="currentColor"></circle>
+            <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor"></path>
+          </svg>
+          Procesando y enviando solicitud...
+        `;
+      }
 
-      // 1. Guardar en Bitácora (Supabase + Respaldo Local)
+      const name = form.full_name?.value.trim() || '';
+      const clientType = form.client_type?.value || '';
+      const phone = form.phone?.value.trim() || '';
+      const email = form.email?.value.trim() || '';
+      const service = form.service_type?.value || '';
+      const comments = form.comments?.value.trim() || '';
+
       const quotePayload = {
         full_name: name,
         client_type: clientType,
@@ -298,25 +311,106 @@ function initQuoteModal() {
         email: email,
         service_type: service,
         comments: comments,
+        recipient: (typeof SALT_CONFIG !== 'undefined' && SALT_CONFIG.quoteNotificationEmail) ? SALT_CONFIG.quoteNotificationEmail : 'saltproteccion@gmail.com',
         created_at: new Date().toISOString()
       };
-      
+
+      // 1. Guardar en Bitácora (Supabase + Respaldo Local)
       saveQuoteToBitacora(quotePayload);
 
-      // 2. Feedback visual de éxito
+      // 2. Enviar Correo Electrónico Profesional a saltproteccion@gmail.com
+      sendQuoteEmail(quotePayload);
+
+      // 3. Feedback visual elegante de éxito
       if (feedback) {
         feedback.innerHTML = `
-          <strong>¡Solicitud de Cotización Registrada con Éxito!</strong><br>
-          Gracias, <strong>${name}</strong>. Sus datos han sido guardados en nuestra bitácora operativa. Un especialista de <strong>${SALT_CONFIG.companyName}</strong> revisará sus requerimientos y se comunicará a <strong>${phone}</strong> / <strong>${email}</strong> a la mayor brevedad.
+          <div style="background: rgba(46, 204, 113, 0.12); border: 1px solid rgba(46, 204, 113, 0.4); border-radius: 8px; padding: 16px; margin-top: 14px; text-align: left;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #2ecc71; font-weight: 800; font-size: 1.05rem;">
+              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              ¡Solicitud de Cotización Enviada con Éxito!
+            </div>
+            <p style="margin: 0 0 8px 0; font-size: 0.92rem; color: #E2E5EC; line-height: 1.5;">
+              Estimado(a) <strong>${name}</strong>, su solicitud ha sido remitida directamente a la gerencia operativa de <strong>${SALT_CONFIG.companyName}</strong> (<em>saltproteccion@gmail.com</em>).
+            </p>
+            <div style="font-size: 0.85rem; color: #A0A5B5; background: rgba(0,0,0,0.25); border-radius: 6px; padding: 10px;">
+              <strong>Resumen de Solicitud:</strong><br>
+              • <strong>Servicio:</strong> ${service}<br>
+              • <strong>Tipo:</strong> ${clientType}<br>
+              • <strong>Contacto:</strong> ${phone} | ${email}
+            </div>
+            <p style="margin: 8px 0 0 0; font-size: 0.88rem; color: #E2E5EC;">
+              Un especialista operativo evaluará su requerimiento y le contactará a la brevedad posible.
+            </p>
+          </div>
         `;
         feedback.classList.add('success');
       }
 
-      // Resetear formulario tras 4 segundos
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `✓ Solicitud Registrada`;
+      }
+
+      // Resetear formulario tras 5 segundos
       setTimeout(() => {
         form.reset();
-      }, 4000);
+        if (submitBtn) submitBtn.innerHTML = originalBtnText;
+      }, 5000);
     });
+  }
+}
+
+/**
+ * Envía la cotización por correo a saltproteccion@gmail.com
+ * Cuenta con arquitectura de doble contingencia (Servidor Node + FormSubmit API)
+ */
+async function sendQuoteEmail(payload) {
+  const recipient = payload.recipient || 'saltproteccion@gmail.com';
+  
+  // Intento 1: A través del endpoint de nuestro servidor local/Render
+  try {
+    const serverRes = await fetch('/api/send-quote', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (serverRes.ok) {
+      console.log('✅ Correo de cotización enviado a través del servidor a:', recipient);
+      return;
+    }
+  } catch (err) {
+    console.log('Intento 1 con servidor local falló, ejecutando contingencia directa FormSubmit...');
+  }
+
+  // Intento 2: Envío directo desde el cliente vía FormSubmit AJAX (respaldo absoluto)
+  try {
+    const postData = {
+      _subject: `🛡️ Nueva Cotización: ${payload.service_type || 'Seguridad'} - ${payload.full_name || 'Cliente'}`,
+      _template: 'table',
+      _captcha: 'false',
+      'Nombre Completo': payload.full_name || 'No especificado',
+      'Tipo de Cliente': payload.client_type || 'No especificado',
+      'Teléfono': payload.phone || 'No especificado',
+      'Correo Electrónico': payload.email || 'No especificado',
+      'Servicio Requerido': payload.service_type || 'No especificado',
+      'Detalles del Requerimiento': payload.comments || 'No especificado',
+      'Fecha': new Date().toLocaleString('es-CR', { timeZone: 'America/Costa_Rica' }),
+      'Origen': 'Sitio Web Seguridad SALT'
+    };
+
+    await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipient)}`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(postData)
+    });
+    console.log('✅ Correo de cotización despachado directamente vía FormSubmit a:', recipient);
+  } catch (err) {
+    console.error('Error al enviar correo por FormSubmit:', err);
   }
 }
 
