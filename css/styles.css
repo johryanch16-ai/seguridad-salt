@@ -430,8 +430,10 @@ button, input, select, textarea {
 }
 
 .hero-title .text-gradient {
-  background: linear-gradient(135deg, #FFFFFF 30%, var(--color-primary) 100%);
+  color: #FF2E44;
+  background: linear-gradient(135deg, #FFFFFF 20%, #FF2E44 85%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1648,6 +1650,75 @@ button, input, select, textarea {
     font-size: 1rem;
     margin-top: 0.5rem;
   }
+  /* Mobile Hero Styling */
+  .hero {
+    padding-top: 105px;
+    padding-bottom: 3rem;
+    min-height: auto;
+  }
+  .hero-badge {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.85rem;
+    letter-spacing: 0.5px;
+    max-width: 100%;
+    margin-bottom: 1.15rem;
+    line-height: 1.35;
+    background: rgba(211, 26, 43, 0.18);
+    border-color: rgba(211, 26, 43, 0.5);
+  }
+  .hero-title {
+    font-size: 1.85rem !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .hero-title .text-gradient {
+    color: #FF2E44 !important;
+    -webkit-text-fill-color: #FF2E44 !important;
+    background: none !important;
+    text-shadow: 0 0 25px rgba(255, 46, 68, 0.4);
+    display: inline;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #E5E7EB;
+    margin-bottom: 1.75rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.85rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  /* Floating WhatsApp Widget on Mobile */
+  .whatsapp-widget-wrap {
+    bottom: 18px;
+    right: 18px;
+  }
+  .whatsapp-float-btn {
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+  }
+  .whatsapp-float-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+  .whatsapp-chatbox {
+    width: calc(100vw - 36px);
+    max-width: 330px;
+    right: 0;
+    bottom: 64px;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -1687,5 +1758,23 @@ button, input, select, textarea {
   }
   .form-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-title {
+    font-size: 1.35rem;
+  }
+  .logo-img {
+    height: 44px;
+  }
+  .logo-brand {
+    gap: 0.65rem;
+  }
+  .hero-title {
+    font-size: 1.65rem !important;
+  }
+  .section-title {
+    font-size: 1.65rem !important;
   }
 }
