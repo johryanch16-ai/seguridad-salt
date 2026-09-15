@@ -698,8 +698,10 @@ button, input, select, textarea {
    ========================================================================== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
 .service-card {
