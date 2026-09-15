@@ -1,10 +1,4 @@
-const fs = require('fs');
-const { Resvg } = require('@resvg/resvg-js');
-const { Jimp } = require('jimp');
-
-function generatePatches() {
-  // 1. Arm patch - Circular embroidered patch matching authentic security uniform patches
-  const armSvg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" width="500" height="500">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" width="500" height="500">
   <defs>
     <!-- Soft cloth shadow for authentic uniform depth -->
     <filter id="clothShadow" x="-15%" y="-15%" width="130%" height="130%">
@@ -89,73 +83,4 @@ function generatePatches() {
     <!-- Natural Sleeve Lighting Curve overlay -->
     <circle cx="250" cy="250" r="236" fill="url(#sleeveLighting)" pointer-events="none" />
   </g>
-</svg>`;
-
-  fs.writeFileSync('assets/patch-arm-embroidered.svg', armSvg);
-  const resvg = new Resvg(armSvg, { fitTo: { mode: 'width', value: 800 } });
-  const png = resvg.render().asPng();
-  fs.writeFileSync('assets/patch-arm-embroidered.png', png);
-  console.log('Saved arm patch, size:', png.length);
-}
-
-async function applyPatches() {
-  const patchImg = await Jimp.read('assets/patch-arm-embroidered.png');
-  const shieldImg = await Jimp.read('assets/badge-shield.png');
-
-  // Exact coordinates matching the original uniform sleeve/pocket patches
-  // w & h are relative width, cx & cy are normalized center coordinates
-  const targets = [
-    // 1. Hero Portería: sleeve patch is at center x: 0.692, y: 0.355, size: 0.040
-    { file: 'hero_porteria.jpg', type: 'arm', cx: 0.693, cy: 0.356, w: 0.038, rot: 3, opacity: 0.94 },
-
-    // 2. Showcase Tecnología: sleeve patch at center x: 0.748, y: 0.518, size: 0.076
-    { file: 'showcase_tecnologia.jpg', type: 'arm', cx: 0.748, cy: 0.518, w: 0.076, rot: 5, opacity: 0.95 },
-
-    // 3. Showcase Atención: sleeve patch at center x: 0.787, y: 0.404, size: 0.040
-    { file: 'showcase_atencion.jpg', type: 'arm', cx: 0.787, cy: 0.404, w: 0.040, rot: -2, opacity: 0.94 },
-
-    // 4. Showcase Rondas: chest pocket badge at center x: 0.523, y: 0.329, size: 0.034
-    { file: 'showcase_rondas.jpg', type: 'arm', cx: 0.523, cy: 0.329, w: 0.034, rot: 2, opacity: 0.92 },
-
-    // 5. Seguridad Física Lobby: sleeve patch at center x: 0.740, y: 0.485, size: 0.065
-    { file: 'seguridad_fisica.jpg', type: 'arm', cx: 0.740, cy: 0.485, w: 0.065, rot: 4, opacity: 0.95 },
-
-    // 6. Galería Supervisión: sleeve patch at center x: 0.615, y: 0.375, size: 0.044
-    { file: 'galeria_supervision.jpg', type: 'arm', cx: 0.615, cy: 0.375, w: 0.044, rot: 4, opacity: 0.94 },
-
-    // 7. Galería Acceso Vehicular: sleeve patch at center x: 0.412, y: 0.440, size: 0.045
-    { file: 'galeria_acceso_vehicular.jpg', type: 'arm', cx: 0.412, cy: 0.440, w: 0.045, rot: -4, opacity: 0.94 },
-
-    // 8. Galería Rondas: sleeve patch at center x: 0.472, y: 0.302, size: 0.045
-    { file: 'galeria_rondas.jpg', type: 'arm', cx: 0.472, cy: 0.302, w: 0.045, rot: 3, opacity: 0.94 },
-
-    // 9. Galería Corporativo: sleeve patch at center x: 0.590, y: 0.340, size: 0.030
-    { file: 'galeria_corporativo.jpg', type: 'arm', cx: 0.590, cy: 0.340, w: 0.030, rot: 0, opacity: 0.93 }
-  ];
-
-  for (const t of targets) {
-    const imgPath = 'assets/images/' + t.file;
-    if (!fs.existsSync(imgPath)) continue;
-
-    const img = await Jimp.read(imgPath);
-    const basePatch = (t.type === 'shield' ? shieldImg : patchImg).clone();
-
-    const targetW = Math.round(img.bitmap.width * t.w);
-    basePatch.resize({ w: targetW });
-
-    if (t.opacity && t.opacity < 1) {
-      basePatch.opacity(t.opacity);
-    }
-
-    const posX = Math.round(img.bitmap.width * t.cx - targetW / 2);
-    const posY = Math.round(img.bitmap.height * t.cy - (basePatch.bitmap.height / 2));
-
-    img.composite(basePatch, posX, posY);
-    await img.write(imgPath);
-    console.log('Composited realistic embroidered patch onto:', t.file);
-  }
-  console.log('ALL UNIFORM PATCHES ADAPTED WITH PROFESSIONAL REALISM!');
-}
-
-generatePatches();
-applyPatches().catch(console.error);
+</svg>
