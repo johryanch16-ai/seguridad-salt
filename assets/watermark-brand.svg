@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <!-- Brand Crimson Gradients -->
+    <linearGradient id="wmCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF384D" stop-opacity="1" />
+      <stop offset="100%" stop-color="#B81424" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Metallic Silver/White for Salt Typography -->
+    <linearGradient id="wmSilverText" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="45%" stop-color="#E2E5EB" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#8F96A3" stop-opacity="0.75" />
+    </linearGradient>
+
+    <!-- Outer Ring Metallic Trim -->
+    <linearGradient id="wmRingSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7" />
+      <stop offset="30%" stop-color="#A5ABB7" stop-opacity="0.4" />
+      <stop offset="70%" stop-color="#FFFFFF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#686F7D" stop-opacity="0.3" />
+    </linearGradient>
+
+    <!-- Ambient Crimson Radial Glow -->
+    <radialGradient id="wmCoreGlow" cx="50%" cy="48%" r="48%">
+      <stop offset="0%" stop-color="#D31A2B" stop-opacity="0.45" />
+      <stop offset="45%" stop-color="#D31A2B" stop-opacity="0.12" />
+      <stop offset="80%" stop-color="#0A0B0E" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Center Emblem Clip (cx: 500, cy: 430, r: 180) -->
+    <clipPath id="wmEmblemClip">
+      <circle cx="500" cy="430" r="180" />
+    </clipPath>
+  </defs>
+
+  <!-- Ambient Red Core Aura -->
+  <circle cx="500" cy="480" r="450" fill="url(#wmCoreGlow)" />
+
+  <!-- Tactical Security Geometric Coordinate Rings -->
+  <!-- Outer Compass/Perimeter Ring -->
+  <circle cx="500" cy="480" r="375" fill="none" stroke="#D31A2B" stroke-width="1.5" stroke-dasharray="10,14" opacity="0.4" />
+  <circle cx="500" cy="480" r="355" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.2" />
+  <circle cx="500" cy="480" r="310" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="3,8" opacity="0.25" />
+  <circle cx="500" cy="480" r="240" fill="none" stroke="#D31A2B" stroke-width="2" stroke-dasharray="14,10" opacity="0.45" />
+
+  <!-- Tactical Crosshair Calibration Lines -->
+  <line x1="500" y1="90" x2="500" y2="190" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,4" />
+  <line x1="500" y1="830" x2="500" y2="910" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3" stroke-dasharray="4,4" />
+  <line x1="110" y1="480" x2="210" y2="480" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,4" />
+  <line x1="790" y1="480" x2="890" y2="480" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,4" />
+
+  <!-- Precision Cardinal Dots -->
+  <circle cx="500" cy="105" r="4" fill="#FF384D" opacity="0.9" />
+  <circle cx="500" cy="895" r="4" fill="#FF384D" opacity="0.6" />
+  <circle cx="125" cy="480" r="4" fill="#FF384D" opacity="0.75" />
+  <circle cx="875" cy="480" r="4" fill="#FF384D" opacity="0.75" />
+
+  <!-- =========================================================================
+       ARCHED TOP MOTTO
+       ========================================================================= -->
+  <path id="wmArchTop" d="M 230,300 A 330,330 0 0,1 770,300" fill="none" />
+  <text font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="20" fill="#FF384D" letter-spacing="10" opacity="0.95">
+    <textPath href="#wmArchTop" startOffset="50%" text-anchor="middle">
+      SEGURIDAD PRIVADA • COSTA RICA
+    </textPath>
+  </text>
+
+  <!-- =========================================================================
+       CENTRAL SALT EMBLEM (cx: 500, cy: 430, r: 180)
+       ========================================================================= -->
+  <!-- Outer Beveled Metallic Shield Ring -->
+  <circle cx="500" cy="430" r="192" fill="#0A0B0E" stroke="url(#wmRingSilver)" stroke-width="5" opacity="0.75" />
+  <circle cx="500" cy="430" r="185" fill="none" stroke="#D31A2B" stroke-width="2.5" opacity="0.85" />
+
+  <!-- Clipped Core Graphic -->
+  <g clip-path="url(#wmEmblemClip)">
+    <!-- Left Half: Crimson Gradient -->
+    <path d="M 500,250 A 180,180 0 0,0 500,610 Z" fill="url(#wmCrimson)" />
+    <!-- Right Half: Dark Obsidian -->
+    <path d="M 500,250 A 180,180 0 0,1 500,610 Z" fill="#0C0E14" />
+    
+    <!-- White Horizon Curved Arc -->
+    <path d="M 320,515 Q 500,450 680,515 Q 500,465 320,515 Z" fill="#FFFFFF" opacity="0.95" />
+
+    <!-- Skyline Architecture in Perspective -->
+    <!-- Left Building -->
+    <path d="M 405,490 L 452,472 L 452,610 L 405,595 Z" fill="#0A0B0E" />
+    <path d="M 452,472 L 472,480 L 472,610 L 452,610 Z" fill="#FFFFFF" />
+    <rect x="420" y="502" width="10" height="26" fill="#E52335" rx="1.5" />
+    <rect x="420" y="540" width="10" height="30" fill="#E52335" rx="1.5" />
+
+    <!-- Center Main Skyscraper (Tallest) -->
+    <path d="M 472,400 L 506,378 L 506,610 L 472,610 Z" fill="#0A0B0E" />
+    <path d="M 506,378 L 545,400 L 545,610 L 506,610 Z" fill="#FFFFFF" />
+    <rect x="515" y="420" width="11" height="22" fill="#0A0B0E" rx="1.5" />
+    <rect x="515" y="455" width="11" height="22" fill="#0A0B0E" rx="1.5" />
+    <rect x="515" y="490" width="11" height="22" fill="#0A0B0E" rx="1.5" />
+
+    <!-- Right Building -->
+    <path d="M 545,455 L 586,476 L 586,610 L 545,610 Z" fill="#FFFFFF" />
+    <rect x="560" y="490" width="10" height="26" fill="#E52335" rx="1.5" />
+    <rect x="560" y="528" width="10" height="28" fill="#E52335" rx="1.5" />
+  </g>
+
+  <!-- Inner Silver Ring Accent -->
+  <circle cx="500" cy="430" r="180" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" />
+
+  <!-- =========================================================================
+       WATERMARK TYPOGRAPHY (Centered within radius < 300px)
+       ========================================================================= -->
+  <!-- "SEGURIDAD" Headline -->
+  <text x="500" y="665" 
+        text-anchor="middle" 
+        font-family="'Outfit', 'Plus Jakarta Sans', Arial, sans-serif" 
+        font-size="34" 
+        font-weight="900" 
+        letter-spacing="20" 
+        fill="#FF384D"
+        opacity="0.95">
+    SEGURIDAD
+  </text>
+
+  <!-- Dominant "SALT" Title -->
+  <text x="500" y="760" 
+        text-anchor="middle" 
+        font-family="'Outfit', 'Plus Jakarta Sans', 'Arial Black', sans-serif" 
+        font-size="108" 
+        font-weight="900" 
+        letter-spacing="14" 
+        fill="url(#wmSilverText)">
+    SALT
+  </text>
+
+  <!-- Underline Accent & Stars -->
+  <line x1="330" y1="785" x2="445" y2="785" stroke="#D31A2B" stroke-width="2.5" opacity="0.75" />
+  <circle cx="500" cy="785" r="4.5" fill="#D31A2B" opacity="0.95" />
+  <line x1="555" y1="785" x2="670" y2="785" stroke="#D31A2B" stroke-width="2.5" opacity="0.75" />
+
+  <!-- Professional Subtitle -->
+  <text x="500" y="818" 
+        text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-size="14" 
+        font-weight="800" 
+        letter-spacing="8" 
+        fill="#FFFFFF" 
+        opacity="0.75">
+    VIGILANCIA • PROTECCIÓN • CONTROL
+  </text>
+</svg>
